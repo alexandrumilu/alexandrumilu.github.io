@@ -1,7 +1,7 @@
 ---
 layout: post
-title: You're up and running!
+title: Test
 mathjax: true
 ---
 
-Test...
+Test...$$n=1$$
