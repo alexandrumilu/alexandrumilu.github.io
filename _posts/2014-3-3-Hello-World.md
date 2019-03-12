@@ -5,7 +5,7 @@ mathjax: true
 ---
 
 Test...$$n=1$$
-1.
+2.
 >**Perturbed gradient descent (PGD)**
 1. **for** $~t = 1, 2, \ldots ~$ **do**
 2. $\quad\quad x_{t} \leftarrow x_{t-1} - \eta \nabla f (x_{t-1})$
