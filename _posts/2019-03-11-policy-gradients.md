@@ -38,7 +38,7 @@ Now we will look at when entropy is maximized among continous distributions with
 $$D(q\mid \mid p) = \mathbb{E}_{q(x)}\log(\frac{q(x)}{p(x)}) = -H(q) - \mathbb{E}_{q(x)}\log p(x) $$
 
 The second term on the RHS is equal to:
-$$\mathbb{E}_{q(x)}\log p(x) = \int_{-\infty}^{\infty} q(x) \log (\frac{1}{\sqrt{2\pi\sigma^2}} e^(-\frac{(x-\mu)^2}{2\sigma^2})dx$$
+\[\mathbb{E}_{q(x)}\log p(x) = \int_{-\infty}^{\infty} q(x) \log (\frac{1}{\sqrt{2\pi\sigma^2}} e^(-\frac{(x-\mu)^2}{2\sigma^2})dx\]
 $$\mathbb{E}_{q(x)}\log p(x) = \int_{-\infty}^{\infty} q(x) \log (\frac{1}{\sqrt{2\pi\sigma^2}}) dx - \log(e) \int_{-\infty}^{\infty}q(x) \frac{(x-\mu)^2}{2\sigma^2})dx$$
 
 One can see that the second term on the RHS is 
