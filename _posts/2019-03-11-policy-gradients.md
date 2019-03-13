@@ -27,7 +27,7 @@ Thus, the KL-divergence looks like a distance between two probability distributi
 One can also notice that we can apply Jensen's inequality directly to $H(p)$ and obtain that $H(p)\geq 0$ with equality only if X is certain (has one outcome with probability 1). 
 
 Let's look at discrete distributions over a set of $n$ elements. We can show that the entropy is maximized when every element is equally probable. To show this let, p(x) be the uniform distribution over the set of $n$ elements and let q be another distribution. Consider $D(q||p)$. We know it is greater than or equal to 0. We'll also show that when $p$ is uniform it is just equal to $H(p) - H(q)$. 
-$$D(q||p) = \sum_{i=1}^n q(i)\log\frac{q(i)}{p(i)} = -H(q) - \sum_{i=1}^n q(i)\log p(i)$$
+$$D(q\mid\mid p) = \sum_{i=1}^n q(i)\log\frac{q(i)}{p(i)} = -H(q) - \sum_{i=1}^n q(i)\log p(i)$$
 However, $p(i) = \frac{1}{n} ,\forall i$, so
 $$\sum_{i=1}^n q(i)\log p(i) = \log p(i) \sum_{i=1}^n q(i) = \log p(i) = \log p(i) \sum_{i=1}^n p(i) = -H(p) $$
 
@@ -38,13 +38,13 @@ Now we will look at when entropy is maximized among continous distributions with
 $$D(q||p) = \mathbb{E}_{q(x)}\log(\frac{q(x)}{p(x)}) = -H(q) - \mathbb{E}_{q(x)}\log p(x) $$
 
 The second term on the RHS is equal to:
-$$\mathbb{E}_{q(x)}\log p(x) = \int_{-\inf}^{\inf} q(x) \log (\frac{1}{\sqrt(2\pi\sigma^2)} e^(-\frac{(x-\mu)^2}{2\sigma^2})dx$$
-$$\mathbb{E}_{q(x)}\log p(x) = \int_{-\inf}^{\inf} q(x) \log (\frac{1}{\sqrt(2\pi\sigma^2)}) dx - \log(e) \int_{-\inf}^{\inf}q(x) \frac{(x-\mu)^2}{2\sigma^2})dx$$
+$$\mathbb{E}_{q(x)}\log p(x) = \int_{-\infty}^{\infty} q(x) \log (\frac{1}{\sqrt{2\pi\sigma^2}} e^(-\frac{(x-\mu)^2}{2\sigma^2})dx$$
+$$\mathbb{E}_{q(x)}\log p(x) = \int_{-\infty}^{\infty} q(x) \log (\frac{1}{\sqrt{2\pi\sigma^2}}) dx - \log(e) \int_{-\infty}^{\infty}q(x) \frac{(x-\mu)^2}{2\sigma^2})dx$$
 
 One can see that the second term on the RHS is 
 $$\frac{1}{2\sigma^2} \mathbb{E}_{q(x)}(X-\mu)^2 = \frac{1}{2\sigma^2}Var(q(x)) = \frac{1}{2\sigma^2}Var(p(x))$$. 
 The first term on the RHS is 
-$$\log (\frac{1}{\sqrt(2\pi\sigma^2)}) \int_{-\inf}^{\inf} q(x) dx = \log (\frac{1}{\sqrt(2\pi\sigma^2)}) = \log (\frac{1}{\sqrt(2\pi\sigma^2)}) \int_{-\inf}^{\inf} p(x) dx $$
+$$\log (\frac{1}{\sqrt{2\pi\sigma^2}}) \int_{-\infty}^{\infty} q(x) dx = \log (\frac{1}{\sqrt{2\pi\sigma^2}}) = \log (\frac{1}{\sqrt{2\pi\sigma^2}}) \int_{-\infty}^{\infty} p(x) dx $$
 
 Thus, 
 $$\mathbb{E}_{q(x)}\log p(x) = \mathbb{E}_{p(x)}\log p(x) = -H(p)$$
