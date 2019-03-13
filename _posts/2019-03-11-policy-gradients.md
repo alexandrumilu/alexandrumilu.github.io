@@ -13,7 +13,7 @@ The logarithm above is the logarithm of base 2. Sometimes the entropy is defined
 
 As an example consider the Bernoullui random variable X that can take values 0,1 with probabilities $p(0) = p$ and $p(1) = 1-p$. The entropy of X, $H = -p\log(p) - (1-p)\log(1-p)$. If we graph the entropy of a function of $p$ it would look like: 
 
-[Entropy Bernoulli Random Variable](/assets/Entropy.png)
+![Entropy Bernoulli Random Variable](/assets/Entropy.png)
 
 We can see that the more "random" the random variable is the higher its entropy. One can think about it in the following way. The harder to predict the random variable is, the higher its entropy, or the larger the entropy, the less a priori information one has on the value of the random variable. 
 
