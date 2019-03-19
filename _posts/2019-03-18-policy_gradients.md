@@ -36,7 +36,7 @@ This gives us the following algorithm.
 1. Initialize $\theta$
 2. for $i$ from $0$ to number of episodes:  
 3. $\quad\quad$ sample trajectory $\tau_i$  
-4. $\quad\quad$ compute gradient $\nabla_\theta J(\theta) =R(\tau_i)\nabla_\theta\sum_{t = 0}^T \ln\pi_\theta(a_t\vert s_t)$  
+4. $\quad\quad$ compute $\nabla_\theta J(\theta) =R(\tau_i)\nabla_\theta\sum_{t = 0}^T \ln\pi_\theta(a_t\vert s_t)$  
 5. $\quad\quad \theta \leftarrow \theta + \alpha \nabla_\theta J(\theta)$
 
 An intuitive way to think about the algorithm is to see that it makes trajectories with high reward more likely and trajectories with low reward less likely. 
@@ -52,4 +52,4 @@ The goal is to move the cart left or right such that the pole does not fall. The
 
 ![Results](/assets/PG_on_CartPole.png)
 
-You can find my implementation in my [github](https://github.com/alexandrumilu/rl/blob/master/policy_gradient_algorithms/base_policy_gradient_agent.py). It is slightly different than the code above. It takes a gradient descent step on a batch of episodes, rather than just one trajectory. It also uses Adam and not vanilla stochastic gradient descent. Under inspection, the gradient computed by the algorithm has very high variance and this is why it takes a lot of episodes for the agent to solve the environment. I will present how to reduce this variance in a future blog post. 
+You can find my implementation in my [github](https://github.com/alexandrumilu/rl/blob/master/policy_gradient_algorithms/base_policy_gradient_agent.py). It is slightly different than the pseudocode above. It takes a gradient descent step on a batch of episodes, rather than just one trajectory. It also uses Adam and not vanilla stochastic gradient descent. Under inspection, the gradient computed by the algorithm has very high variance and this is why it takes a lot of episodes for the agent to solve the environment. I will present how to reduce this variance in a future blog post. 
