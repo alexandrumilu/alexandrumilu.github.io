@@ -33,11 +33,11 @@ $$\nabla_\theta \ln p(\tau)  = \nabla_\theta\sum_{t = 0}^T \ln p(s_{t+1}\vert s_
 
 This gives us the following algorithm. 
 >**REINFORCE Algorithm**
->1. Initialize $\theta$
->2. for $i$ from $0$ to number of episodes:  
->3.$\quad\quad$ sample trajectory $\tau_i$  
->4.$\quad\quad$ compute gradient $\nabla_\theta J(\theta) =R(\tau_i)\nabla_\theta\sum_{t = 0}^T \ln\pi_\theta(a_t\vert s_t)$
->5.$\quad\quad \theta \leftarrow \theta + \alpha \nabla_\theta J(\theta)$
+1. Initialize $\theta$
+2. for $i$ from $0$ to number of episodes:  
+3.$\quad\quad$ sample trajectory $\tau_i$  
+4.$\quad\quad$ compute gradient $\nabla_\theta J(\theta) =R(\tau_i)\nabla_\theta\sum_{t = 0}^T \ln\pi_\theta(a_t\vert s_t)$
+5.$\quad\quad \theta \leftarrow \theta + \alpha \nabla_\theta J(\theta)$
 
 An intuitive way to think about the algorithm is to see that it makes trajectories with high reward more likely and trajectories with low reward less likely. 
 
