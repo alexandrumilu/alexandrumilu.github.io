@@ -9,10 +9,16 @@ In this post I will introduce reinforcement learning and one of the basic algori
 
 In reinforcement learning we are interested in training *agents* to *act* in an *environment* such that they maximize a *reward*. Formally, we model the problem as a Markov Decision Process which is composed of: a set of states $S$, a set of actions $A$, an initial state distribution $p(s_0)$, a stationary transition dynamics distribution with density $p(s_{t+1}\vert s_t,a_t)$ satisfying the Markov property, i.e. $p(s_{t+1}\vert s_t,a_t) = p(s_{t+1}\vert s_t, a_t, s_{t-1}, a_{t-1},...,s_1,a_1,s_0,a_0)$, and a reward function $r:S \times A \rightarrow \mathbb{R}$. The Markov property assumes that the future is independent of the past, given the present. At each step our agent will receive from the environment a state $s_t$, it will choose an action $a_t$, and it will get back from the environment the next state $s_{t+1}$ and a reward $r_t$. In this post I will only consider episodes that end after a finite number of steps. 
 
-We will endow our agent with a parametrized stochastic policy $\pi_\theta$ that will take a state and map it to a probability distribution over actions. For example, for a discrete environment with $n$ actions the output will be an $n$ dimensional vector, with the $i$-th entry corresponding to the probability that the $i$-th action will be chosen. In deep reinforcement learning $\theta$ will correspond to the parameters of a neural network with input a state and output the probability distribution over actions. We’ll also define a trajectory $\tau$ to be the list of states and actions in an episode, $\tau = (s_0,a_0,s_1,a_1,…,s_T)$. The transition dynamics and our policy determine a probability distribution $p$ over trajectories. 
+We will endow our agent with a parametrized stochastic policy $\pi_\theta$ that will take a state and map it to a probability distribution over actions. For example, for a discrete environment with $n$ actions the output will be an $n$ dimensional vector, with the $i$-th entry corresponding to the probability that the $i$-th action will be chosen. In deep reinforcement learning $\theta$ will correspond to the parameters of a neural network with input a state and output the probability distribution over actions. We’ll also define a trajectory $\tau$ to be the list of states and actions in an episode, $\tau = (s_0,a_0,s_1,a_1,…,s_T)$. The transition dynamics and our policy determine a probability distribution $p$ over trajectories.  
+
 $$p(\tau) =p(s_0) \prod_{t=0}^T  p(s_{t+1}\vert s_t,a_t)\pi_\theta(a_t\vert s_t).$$
-Let $R(\tau)$ be the total reward gathered on trajectory $\tau$. That is if $\tau = (s_0,a_0,s_1,a_1,…,s_T)$ then $$R(\tau) = \sum_{t=0}^T r(s_t,a_t).$$
- Then our reinforcement learning problem becomes to find $\theta^{*}$ that maximizes expected reward, i.e.:
+
+Let $R(\tau)$ be the total reward gathered on trajectory $\tau$. That is if $\tau = (s_0,a_0,s_1,a_1,…,s_T)$ then 
+
+$$R(\tau) = \sum_{t=0}^T r(s_t,a_t).$$
+
+Then our reinforcement learning problem becomes to find $\theta^{*}$ that maximizes expected reward, i.e.:
+
 $$\theta^{*} = \arg\max_{\theta}\mathbb{E}_{p(\tau)}[R(\tau)].$$
 
 Let $J(\theta) = \mathbb{E}_{p(\tau)}[R(\tau)]$. Then our goal is to maximize $J(\theta)$. We will do this using gradient descent. For this we have to compute the gradient of $J$ with respect to $\theta$. Fortunately this can be done using a nice trick. We have that the gradient is equal to:
