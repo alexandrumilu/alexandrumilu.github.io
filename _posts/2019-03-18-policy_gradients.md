@@ -45,6 +45,8 @@ This algorithm is easy to implement, however it has very high variance. I implem
 
 
 ![CartPole](/assets/CartPole.png)
+
+
 The goal is to move the cart left or right such that the pole does not fall. The agent receives a reward equal to $1$ for every timestep the pole has not fallen. The episode ends when the pole has fallen more than $15$ degrees, or the cart has moved more than $2.4$ units from center, or the agent has held it up for 200 episodes. It is a pretty easy environment, one can hard code an algorithm that keeps the pole up for 200 episodes in 10 lines of [code](https://github.com/alexandrumilu/rl/blob/master/imitation_learning/DAgger.py). This is how my implementation of REINFORCE performed on it:
 
 
