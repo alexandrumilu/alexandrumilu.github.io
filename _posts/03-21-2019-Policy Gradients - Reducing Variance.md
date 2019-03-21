@@ -1,4 +1,8 @@
-﻿In this post I will introduce how to compute gradients of lower variance in the REINFORCE algorithm. 
+layout: post
+title: Policy Gradients - Reward-to-Go
+mathjax: true
+ 
+ In this post I will introduce how to compute gradients of lower variance in the REINFORCE algorithm. 
 
 In the previous post we have computed that the gradient of the reward function with respect to the parameters is:
 
