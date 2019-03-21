@@ -1,6 +1,8 @@
+---
 layout: post
-title: Policy Gradients - Reward-to-Go
+title: Policy Gradients
 mathjax: true
+---
  
  In this post I will introduce how to compute gradients of lower variance in the REINFORCE algorithm. 
 
