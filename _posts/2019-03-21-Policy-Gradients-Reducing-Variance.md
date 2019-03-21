@@ -27,10 +27,13 @@ $$\nabla_\theta J(\theta)  \approx \frac{1}{N}\sum_{i=1}^N  \big(\sum_{t=0}^T \n
 
 It is easy to see that by summing up fewer numbers the gradient will be smaller and thus have smaller variance. We can prove the equation above by just being slightly more careful in the way we compute the gradient. 
 
-We have $J(\theta) = \mathbb{E}_{p(\tau)} R(\tau)$. By linearity of expectation, this is equal to $J(\theta) = \sum_{t=0}^T\mathbb{E}_{p(\tau)} r(s_t,a_t)$.  Let $\tau_t$ be the trajectory until time step $t$ and $\tau'_t$ be the trajectory after $t$. Thus,
+We have $J(\theta) = \mathbb{E}_{p(\tau)} R(\tau)$ . By linearity of expectation, this is equal to $J(\theta) = \sum_{t=0}^T\mathbb{E}_{p(\tau)} r(s_t,a_t)$.  Let $\tau_t$ be the trajectory until time step $t$ and $\tau'_t$ be the trajectory after $t$. Thus,
+
 $$J(\theta) = \sum_{t=0}^T\mathbb{E}_{p(\tau_t)p(\tau_t'\vert\tau_t)} r(s_t,a_t) = \mathbb{E}_{p(\tau_t)}r(s_t,a_t)\mathbb{E}_{p(\tau_t'\vert\tau_t)} (1)$$ 
 
-Thus,$$J(\theta) = \sum_{t=0}^T\mathbb{E}_{p(\tau_t)}r(s_t,a_t).$$
+Thus,
+
+$$J(\theta) = \sum_{t=0}^T\mathbb{E}_{p(\tau_t)}r(s_t,a_t).$$
 When taking the gradient, and after applying the log trick as before the transition dynamics cancel and we will be left with what we need.
 
 $$\nabla_\theta J(\theta) = \sum_{t=0}^T\nabla_\theta\mathbb{E}_{p(\tau_t)}r(s_t,a_t)$$
