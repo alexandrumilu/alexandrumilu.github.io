@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Policy Gradients
+title: Policy Gradients - Reward-to-Go
 mathjax: true
 ---
  
