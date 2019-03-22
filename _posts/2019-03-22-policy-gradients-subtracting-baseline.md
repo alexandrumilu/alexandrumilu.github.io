@@ -67,9 +67,8 @@ Using this, we get the following algorithm which we will call the Vanilla Policy
 1. Initialize $\theta,\phi$
 2. while still learning: 
 3. $\quad\quad$ sample $m$ trajectories $\tau$
-4. $\quad\quad$ for each time-step in each trajectory compute reward to go  
-
-$$R_t = \sum_{t'=t}^T r(s_t,a_t)$$
+4. $\quad\quad$ for each time-step in each trajectory compute reward to go   
+     $$R_t = \sum_{t'=t}^T r(s_t,a_t)$$
 5. $\quad\quad$ fit $\phi$ to  the function below by taking some number of gradient steps
  $$\phi = \arg\min_\phi \frac{1}{m}\sum_{i=1}^m\sum_{t=0}^T( R_t-V_\phi(s_t))^2$$
 6.  $\quad\quad$ update $\theta$ using the gradient
@@ -79,4 +78,4 @@ My implementation of the algorithm above is [here](https://github.com/alexandrum
 
 ![VPG results](/assets/pgvalue.png)
 
-This algorithm still has some downsides. It is on-policy - the agent needs sample trajectories from the current policy in order to improve the policy. Also, there is no guarantee in the current form of the algorithm that the new policy - the one after the gradient update - will be better than the old one. In future blog posts I will discuss some approaches to guarantee improvement. 
+This algorithm can still be improved. It is on-policy - the agent needs sample trajectories from the current policy in order to improve the policy. Also, there is no guarantee in the current form of the algorithm that the new policy - the one after the gradient update - will be better than the old one. In future blog posts I will discuss some approaches to guarantee improvement. 
