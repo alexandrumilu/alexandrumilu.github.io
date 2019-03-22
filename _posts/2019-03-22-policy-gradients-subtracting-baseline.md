@@ -18,8 +18,11 @@ To show this, we must prove that
 
 $$\mathbb{E}_{p(\tau)} \sum_{t=0}^T \nabla_\theta \ln \pi(a_t\vert s_t)b(s_t)=0$$
 
-We will actually prove that 
-$$f(s_t) = \mathbb{E}_{p(\tau)}  \nabla_\theta \ln \pi(a_t\vert s_t)b(s_t)=0,\forall t\in\{0,1,...,T-1\}$$
+We will actually prove that  
+
+$$f(s_t) = \mathbb{E}_{p(\tau)}  \nabla_\theta \ln \pi(a_t\vert s_t)b(s_t)=0,\forall t\in\{0,1,...,T-1\}.$$
+
+
 We will use the same tactic we had when we proved that we can just sum up the rewards to go, that is, we will divide the trajectory into 2: $\tau_t = (s_0,a_0,...s_t)$ the trajectory until time step $t$ and $\tau_t' = (a_t,s_{t+1},...,s_T)$ - the trajectory after time $t$. 
 
 $$f(s_t) = \int_{\tau}\nabla_\theta(\ln\pi(a_t\vert s_t))b(s_t)p(\tau).$$
@@ -39,7 +42,7 @@ Notice that because of the Markov property $p(\tau_t'\vert \tau_t) = p(\tau_t'\v
 
 $$g(s_t) =  \int_{a_t}\nabla_\theta(\ln\pi(a_t\vert s_t))p(a_t\vert s_t) \int_{(s_{t+1},...,s_T)}p(s_{t+1},...,s_T\vert a_t,s_t)$$
 
-One can notice that the second integral is equal to $1$ and that $p(a_t\vert s_t) = \pi(a_t|s_t)$. We are left with 
+One can notice that the second integral is equal to $1$ and that $p(a_t\vert s_t) = \pi(a_t\vert s_t)$. We are left with 
 
 $$g(s_t) =  \int_{a_t}\nabla_\theta(\ln\pi(a_t\vert s_t))\pi(a_t\vert s_t). $$
 
@@ -64,7 +67,8 @@ Using this, we get the following algorithm which we will call the Vanilla Policy
 1. Initialize $\theta,\phi$
 2. while still learning: 
 3. $\quad\quad$ sample $m$ trajectories $\tau$
-4. $\quad\quad$ for each time-step in each trajectory compute reward to go 
+4. $\quad\quad$ for each time-step in each trajectory compute reward to go  
+
 $$R_t = \sum_{t'=t}^T r(s_t,a_t)$$
 5. $\quad\quad$ fit $\phi$ to  the function below by taking some number of gradient steps
  $$\phi = \arg\min_\phi \frac{1}{m}\sum_{i=1}^m\sum_{t=0}^T( R_t-V_\phi(s_t))^2$$
