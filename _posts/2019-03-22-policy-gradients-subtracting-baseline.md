@@ -67,7 +67,7 @@ Using this, we get the following algorithm which we will call the Vanilla Policy
 1. Initialize $\theta,\phi$
 2. while still learning: 
 3. $\quad\quad$ sample $m$ trajectories $\tau$
-4. $\quad\quad$ for each time-step in each trajectory compute reward to go   
+4. $\quad\quad$ for each time-step in each trajectory compute    
      $$R_t = \sum_{t'=t}^T r(s_t,a_t)$$
 5. $\quad\quad$ fit $\phi$ to  the function below by taking some number of gradient steps
  $$\phi = \arg\min_\phi \frac{1}{m}\sum_{i=1}^m\sum_{t=0}^T( R_t-V_\phi(s_t))^2$$
