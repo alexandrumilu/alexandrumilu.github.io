@@ -1,4 +1,10 @@
-﻿We have seen in the previous [post](https://alexandrumilu.github.io/2019/03/21/Policy-Gradients-Reducing-Variance/) how to reduce variance of the policy gradient algorithm by only considering the "reward-to-go". In this post I will show we can further reduce variance by subtracting a baseline that is a function of the state. 
+---
+layout: post
+title: Policy Gradients - Reward-to-Go
+mathjax: true
+---
+
+We have seen in the previous [post](https://alexandrumilu.github.io/2019/03/21/Policy-Gradients-Reducing-Variance/) how to reduce variance of the policy gradient algorithm by only considering the "reward-to-go". In this post I will show we can further reduce variance by subtracting a baseline that is a function of the state. 
 
 We saw earlier that 
 
