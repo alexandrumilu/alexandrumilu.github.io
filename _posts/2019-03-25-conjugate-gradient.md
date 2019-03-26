@@ -27,7 +27,7 @@ which is only possible if $c_j=0$ since $A$ was positive definite.
 Now, let's assume that we have $n$ conjugate vectors with respect to $A$, $\{p_0,p_1,...,p_{n-1}\}$. Let $x_0 \in \mathbb{R}^n$ and define the sequence $\{x_k\}$ using the following relation: $x_{k+1} = x_k + \alpha_k p_k$, where 
 $$\alpha_k = \arg\min_\alpha\phi(x_k+\alpha p_k).$$
 
-Then we can show that $x_n = x^*$, where $x^*$ is the minimum of $\phi$.   
+Then we can show that $$x_n = x^*$$, where $$x^*$$ is the minimum of $$\phi$$.   
 
 First, let's find a closed form expression for $\alpha_k$. 
 
