@@ -91,7 +91,7 @@ we have that $p_k$ and $p_{k-1}$ are conjugate. Now let's prove that $p_k$ and $
 
 $$p_i^TAp_k = -p_i^TAr_k + \beta_{k} p_i^TAp_{k-1}$$
 
-We we will prove by induction that if $$\{p_0,...,p_k\}$$ are conjugate. The induction hypothesis is true for $\{p_0,p_1\}$ from the way we choose $\beta_1$. Assume $$\{p_0,...,p_{k-1}\}$$ are conjugate. I will prove that $$\{p_0,...,p_{k-1},p_k = -r_k+\beta_kp_{k-1}\}$$ are conjugate. From the induction hypothesis 
+We we will prove by induction that $$\{p_0,...,p_k\}$$ are conjugate. The induction hypothesis is true for $$\{p_0,p_1\}$$ from the way we choose $\beta_1$. Assume $$\{p_0,...,p_{k-1}\}$$ are conjugate. I will prove that $$\{p_0,...,p_{k-1},p_k = -r_k+\beta_kp_{k-1}\}$$ are conjugate. From the induction hypothesis 
 
 
 $$\beta_{k} p_i^TAp_{k-1} = 0$$
@@ -111,8 +111,12 @@ which is true since
 $$\alpha_0 = \frac{-r_0^Tp_0}{ p_0^TAp_0}.$$
 
 Now, assume the induction hypothesis is true for $k$ and we will prove it for $k+1$. 
-First, let $i\in\{0,1,...,k-1\}$.
+First, let $$i\in\{0,1,...,k-1\}$$.
+
+
 $$r_{k+1}^Tp_i = (r_k+\alpha_kAp_k)^Tp_i = r_k^Tp_i+\alpha_kp_k^TAp_i = 0$$
+
+
 because $r_k^Tp_i=0$ from the induction hypothesis and $p_k^TAp_i =0$ from being conjugate vectors. Now, let $i=k$.
 
 $$r_{k+1}^Tp_k = (r_k+\alpha_kAp_k)^Tp_k = 0$$
@@ -121,16 +125,21 @@ because
 
 $$\alpha_k = \frac{-r_k^Tp_k}{ p_k^TAp_k}.$$
 
-So we have proved that if $\{p_0,p_1,...,p_{k-1}\}$ are conjugate then $r_k^Tp_i = 0$, for $i\in\{0,1,...,k-1\}$. Now we must prove that $Ap_i \in span(p_0,...,p_{i+1}),\forall i.$ In order to do this we will show that 
+So we have proved that if $$\{p_0,p_1,...,p_{k-1}\}$$ are conjugate then $r_k^Tp_i = 0$, for $$i\in\{0,1,...,k-1\}$$. Now we must prove that $$Ap_i \in span(p_0,...,p_{i+1}),\forall i.$$ In order to do this we will show that 
 
 $$span(p_0,...,p_i) = span(r_0,r_1,...,r_i) = span(r_0,Ar_0,...A^ir_0).$$
 
 We will also prove this by induction over $i$. It is easy to see it is true for $i=0$ since $p_0 = -r_0$. Assume it is true for $i$. 
 
 We have that $p_i \in span(r_0,Ar_0,...A^ir_0)$, so $Ap_i \in span(r_0,Ar_0,...A^{i+1}r_0)$. We also have that $r_i \in span(r_0,Ar_0,...A^ir_0)\subset span(r_0,Ar_0,...A^{i+1}r_0)$ so $r_{i+1} = r_{i}+\alpha_iAp_i \in span(r_0,Ar_0,...A^{i+1}r_0)$. Therefore 
+
+
 $$span(r_0,r_1,...,r_{i+1}) \subset span(r_0,Ar_0,...A^{i+1}r_0)$$
 
+
 Now notice that $A^{i}r_0 \in span(p_0,...,p_i)$, so $A^{i+1}r_0 \in span(Ap_0,...,Ap_i)$. Using that $Ap_k = \frac{r_{k+1}-r_k}{\alpha_k}$ we get that $A^{i+1}r_0 \in span(p_0,p_1,...,p_{i+1})$. Therefore 
+
+
 $$span(p_0,p_1,...,p_{i+1}) \supset span(r_0,Ar_0,...A^{i+1}r_0)$$
 
 Using that $p_{i+1}=-r_{i+1}+\beta_{i+1} p_{i}$ and the induction hypothesis we also get that
@@ -138,6 +147,8 @@ Using that $p_{i+1}=-r_{i+1}+\beta_{i+1} p_{i}$ and the induction hypothesis we 
 $$span(p_0,p_1,...,p_{i+1}) \subset span(r_0,r_1,...r_{i+1}).$$
 
 Thus,
+
+
 $$span(p_0,...,p_{i+1}) = span(r_0,r_1,...,r_{i+1}) = span(r_0,Ar_0,...A^{i+1}r_0).$$
 
 And we are done. To summarize, we have proved that if $\{p_0,p_1,...,p_{k-1}\}$ are conjugate then $r_k^Tp_i = 0$, for $i\in\{0,1,...,k-1\}$. We have also proved that $p_i \in span(r_0,Ar_0,...A^ir_0)$, so $Ap_i \in span(r_0,Ar_0,...A^{i+1}r_0) = span(p_0,p_1,...,p_{i+1})$. Therefore, if $i\leq k-2$ as we needed above we have that $r_k^TAp_i = 0$. Thus, $\{p_0,...,p_k\}$ are conjugate. 
