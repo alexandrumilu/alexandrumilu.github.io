@@ -16,7 +16,7 @@ This is because $\phi(x)$ is convex and its gradient is equal to
 
 $$\nabla_x\phi(x) = Ax-b$$
 
-We will define a set of not null vectors $\{p_0,p_1,...,p_m\}$ conjugate with respect to $A$ if 
+We will define a set of not null vectors $$\{p_0,p_1,...,p_m\}$$ conjugate with respect to $A$ if 
 $$p_i^TAp_j = 0,\forall i\not=j.$$
 
 It is easy to see that the vectors are linearly independent since if we let $\{ c_0,c_1,...,c_m \}\subset \mathbb{R}$ s.t 
@@ -89,6 +89,8 @@ we have that $p_k$ and $p_{k-1}$ are conjugate. Now let's prove that $p_k$ and $
 $$p_i^TAp_k = -p_i^TAr_k + \beta_{k} p_i^TAp_{k-1}$$
 
 We we will prove by induction that if $\{p_0,...,p_k\}$ are conjugate. The induction hypothesis is true for $\{p_0,p_1\}$ from the way we choose $\beta_1$. Assume $\{p_0,...,p_{k-1}\}$ are conjugate. I will prove that $\{p_0,...,p_{k-1},p_k = -r_k+\beta_kp_{k-1}\}$ are conjugate. From the induction hypothesis 
+
+
 $$\beta_{k} p_i^TAp_{k-1} = 0$$
 
 Thus we must prove that 
@@ -148,6 +150,8 @@ $$\alpha_k = \frac{r_k^Tr_k}{ p_k^TAp_k}.$$
 For $\beta_k$ first notice that $r_k = \beta_kp_{k-1}-p_k$, so because $r_{k+1}$ is orthogonal to the RHS $r_{k+1}$ is orthogonal to $r_k$. Using this we have:
 
 $$ \beta_{k+1} = \frac{p_{k}^TAr_{k+1}}{p_{k}^TAp_{k}} = \frac{r_{k+1}^TAp_k}{p_{k}^TAp_{k}} =\frac{r_{k+1}^T(\frac{r_{k+1}-r_k}{\alpha_k})}{p_{k}^TAp_{k}} =  \frac{r_{k+1}^Tr_{k+1}}{r_k^Tr_k}$$
+
+
 Thus, we get the following algorithm:
 >**Conjugate Gradient Algorithm**
 1. Initialize $x_0,r_0 = Ax_0-b, p_0 = -r_0$
