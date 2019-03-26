@@ -19,12 +19,15 @@ $$\nabla_x\phi(x) = Ax-b$$
 We will define a set of not null vectors $$\{p_0,p_1,...,p_m\}$$ conjugate with respect to $A$ if 
 $$p_i^TAp_j = 0,\forall i\not=j.$$
 
-It is easy to see that the vectors are linearly independent since if we let $\{ c_0,c_1,...,c_m \}\subset \mathbb{R}$ s.t 
-$$\sum_{i=0}^m c_ip_i = 0$$ and we multiply on the left by $p_j^TA$ for every $j$ we get that 
+It is easy to see that the vectors are linearly independent since if we let $$\{ c_0,c_1,...,c_m \}\subset \mathbb{R}$$ s.t 
+
+$$\sum_{i=0}^m c_ip_i = 0$$ 
+
+and we multiply on the left by $p_j^TA$ for every $j$ we get that 
 $$c_jp_j^TAp_j=0,\forall j$$ 
 which is only possible if $c_j=0$ since $A$ was positive definite. 
 
-Now, let's assume that we have $n$ conjugate vectors with respect to $A$, $\{p_0,p_1,...,p_{n-1}\}$. Let $x_0 \in \mathbb{R}^n$ and define the sequence $\{x_k\}$ using the following relation: $x_{k+1} = x_k + \alpha_k p_k$, where 
+Now, let's assume that we have $n$ conjugate vectors with respect to $A$, $$\{p_0,p_1,...,p_{n-1}\}$$. Let $x_0 \in \mathbb{R}^n$ and define the sequence $\{x_k\}$ using the following relation: $x_{k+1} = x_k + \alpha_k p_k$, where 
 $$\alpha_k = \arg\min_\alpha\phi(x_k+\alpha p_k).$$
 
 Then we can show that $$x_n = x^*$$, where $$x^*$$ is the minimum of $$\phi$$.   
@@ -47,10 +50,10 @@ $$\alpha_k = \frac{-r_k^Tp_k}{ p_k^TAp_k}.$$
 From the definition of our sequence, we have 
 $$x_n = x_0+\sum_{i=0}^{n-1}\alpha_ip_i.$$
 
-The set of conjugate vectors $\{p_0,p_1,...,p_{n-1}\}$ is  a set of $n$ linearly independent vectors and thus it spans $\mathbb{R}^n$. This means there exist $\beta_0,...,\beta_{n-1}\in \mathbb{R}^n$ such that 
+The set of conjugate vectors $$\{p_0,p_1,...,p_{n-1}\}$$ is  a set of $n$ linearly independent vectors and thus it spans $\mathbb{R}^n$. This means there exist $$\beta_0,...,\beta_{n-1}\in \mathbb{R}^n$$ such that 
 $$x^* - x_0 = \sum_{i=0}^{n-1}\beta_ip_i$$
 
-All that is left to prove is that $\alpha_i = \beta_i,\forall i$. By multiplying on the left with $p_i^TA$ and using that $\{p_0,p_1,...,p_{n-1}\}$ are conjugate we get that
+All that is left to prove is that $\alpha_i = \beta_i,\forall i$. By multiplying on the left with $p_i^TA$ and using that $$\{p_0,p_1,...,p_{n-1}\}$$ are conjugate we get that
 
 $$p_i^TA(x^*-x_0) = \beta_i p_i^TAp_i.$$
 
@@ -84,11 +87,11 @@ So if we choose
 
 $$\beta_{k} = \frac{p_{k-1}^TAr_k}{p_{k-1}^TAp_{k-1}}$$
 
-we have that $p_k$ and $p_{k-1}$ are conjugate. Now let's prove that $p_k$ and $p_i$ are conjugate $\forall i \in\{0,1,...,k-2\}$. To do this, we notice that 
+we have that $p_k$ and $p_{k-1}$ are conjugate. Now let's prove that $p_k$ and $p_i$ are conjugate $$\forall i \in\{0,1,...,k-2\}$$. To do this, we notice that 
 
 $$p_i^TAp_k = -p_i^TAr_k + \beta_{k} p_i^TAp_{k-1}$$
 
-We we will prove by induction that if $\{p_0,...,p_k\}$ are conjugate. The induction hypothesis is true for $\{p_0,p_1\}$ from the way we choose $\beta_1$. Assume $\{p_0,...,p_{k-1}\}$ are conjugate. I will prove that $\{p_0,...,p_{k-1},p_k = -r_k+\beta_kp_{k-1}\}$ are conjugate. From the induction hypothesis 
+We we will prove by induction that if $$\{p_0,...,p_k\}$$ are conjugate. The induction hypothesis is true for $\{p_0,p_1\}$ from the way we choose $\beta_1$. Assume $$\{p_0,...,p_{k-1}\}$$ are conjugate. I will prove that $$\{p_0,...,p_{k-1},p_k = -r_k+\beta_kp_{k-1}\}$$ are conjugate. From the induction hypothesis 
 
 
 $$\beta_{k} p_i^TAp_{k-1} = 0$$
@@ -97,9 +100,9 @@ Thus we must prove that
 
 $$r_k^TAp_i=0,\forall i,0\leq i\leq k-2.$$
 
-The way we will do this is first we prove that $r_k$ is orthogonal to $p_i$ for $i\in\{0,1,...,k-1\}$. And then we prove that $Ap_i$ belongs to the subspace spanned by $i\in\{p_0,p_1,...,p_{k-1}\}$. These two results will give us the conclusion. 
+The way we will do this is first we prove that $r_k$ is orthogonal to $p_i$ for $$i\in\{0,1,...,k-1\}$$. And then we prove that $Ap_i$ belongs to the subspace spanned by $$i\in\{p_0,p_1,...,p_{k-1}\}$$. These two results will give us the conclusion. 
 
-We will prove by induction over $k$ that if $\{p_0,p_1,...,p_{k-1}\}$ are conjugate then $r_k^Tp_i = 0$, for $i\in\{0,1,...,k-1\}$. First notice that from $x_{k+1} = x_k+\alpha_k p_k$, by multiplying on the left with $A$ and subtracting $b$ we get $r_{k+1} = r_k + \alpha_k Ap_k$. For $k=0$, we must prove that $r_1^Tp_0 = 0$. This is equivalent to 
+We will prove by induction over $k$ that if $$\{p_0,p_1,...,p_{k-1}\}$$ are conjugate then $r_k^Tp_i = 0$, for $i\in\{0,1,...,k-1\}$. First notice that from $$x_{k+1} = x_k+\alpha_k p_k$$, by multiplying on the left with $A$ and subtracting $b$ we get $r_{k+1} = r_k + \alpha_k Ap_k$. For $k=0$, we must prove that $r_1^Tp_0 = 0$. This is equivalent to 
 
 $$(r_0+\alpha_0Ap_0)^Tp_0 = 0$$ 
 
