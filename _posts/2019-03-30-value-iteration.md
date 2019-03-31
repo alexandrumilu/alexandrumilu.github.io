@@ -63,7 +63,7 @@ $$  \| f(x) - f(y)\|\leq L\| x - y\|,\forall x,y \in \mathbb{R}^n $$
 
 where $$L \in (0,1)$$ and $$\|\cdot \|$$ is a norm on $$\mathbb{R}^n$$. Then there exists a unique $$x^* \in \mathbb{R}^n$$ such that $$f(x^*) = x^*$$. We will call $$x^*$$ a fixed point of $$f$$. Furthermore, for all $$x_0\in \mathbb{R}^n$$ define a sequence $$\{x_n\}$$ recursively as $$x_{n+1} = f(x_n)$$. Then, we have that $$\{x_n\}$$ converges to $$x^*$$. 
 
-*Proof:* First notice that we cannot have two fixed points $$x^*$ and $y^*$$. Assume that we could. Then we would have 
+*Proof:* First notice that we cannot have two fixed points $$x^*$$ and $$y^*$$. Assume that we could. Then we would have 
 
 $$ \| x^* - y^*\| =  \| f(x^*) - f(y^*)\|\leq L\| x^* - y^*\|$$
 
