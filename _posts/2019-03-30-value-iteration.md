@@ -34,9 +34,9 @@ Then the Bellman equations can be succinctly written as:
 
 $$T^\pi V^\pi = V^\pi.$$ 
 
-We can compute the value of a policy as follows. Start with a random value function $V_0$. Define the sequence $\{V_n\}$ recursively by $V_n = T^\pi V_{n-1}$. We will prove that $T^\pi$ is a maximum norm contraction and using Banach's fixed point theorem this means that the sequence $\{V_n\}$ converges to the unique solution $V^\pi$  - the true value of the policy. 
+We can compute the value of a policy as follows. Start with a random value function $V_0$. Define the sequence $\{V_n\}$ recursively by $V_n = T^\pi V_{n-1}$. We will prove that $T^\pi$ is a maximum norm contraction and using Banach's fixed point theorem this means that the sequence $\{V_n\}$ converges to the unique solution $$V^\pi$$  - the true value of the policy. 
 
-Let $V^*$ be the optimal value function - that is the value function corresponding to the optimal policy. One can see that $V^*$ satisfies the following set of equations (Bellman optimality equations):
+Let $$V^*$$ be the optimal value function - that is the value function corresponding to the optimal policy. One can see that $$V^*$$ satisfies the following set of equations (Bellman optimality equations):
 
 $$V^*(s) = \max_{a\in A} (r(s,a)+\gamma \sum_{s'} p(s'\vert s,a)V^*(s')),\forall s \in S.$$
 
