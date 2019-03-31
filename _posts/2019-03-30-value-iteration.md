@@ -132,6 +132,7 @@ However, the difference of two maximums is less than the maximum of the differen
 $$\|T^* V-T^* U\|_{\infty} \leq \max_{s\in S,a\in A} (r(s,a)+\gamma \sum_{s'} p(s'\vert s,a)V(s'))- (r(s,a)+\gamma \sum_{s'} p(s'\vert s,a)U(s'))$$
 
 Cancelling the reward term, we get:
+
 $$\|T^* V-T^* U\|_{\infty} \leq \max_{s\in S,a\in A} \gamma \sum_{s'} p(s'\vert s,a)(V(s')-U(s'))$$
 
 As above, we get:
