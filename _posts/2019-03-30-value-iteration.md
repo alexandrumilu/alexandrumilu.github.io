@@ -93,7 +93,7 @@ The RHS goes to $0$ as $n$ goes to infinity and the LHS is non-negative. Thus $$
 
 $$\|f(x^*)-x^*\|\leq\|f(x^*)-f(x_n)\|+\|f(x_n) - x^*\|\leq L\|x^*-x_n\|+\|x_{n+1}-x^*\|$$
 
-Because the RHS converges to $0$ as $n$ goes to infinity and the LHS is non-negative we obtain that $f(x^*) = x^*$ and our proof is complete. 
+Because the RHS converges to $0$ as $n$ goes to infinity and the LHS is non-negative we obtain that $$f(x^*) = x^*$$ and our proof is complete. 
 
 Let $$\pi$$ be a policy and let $$T^\pi$$ be the Bellman operator associated with that policy. We are assuming that the state space is finite, thus $$T^{\pi}:\mathbb{R}^{\vert S\vert}\rightarrow\mathbb{R}^{\vert S\vert}$$. We will show that $$T^\pi$$ is a contraction under the infinity norm defined as 
 
