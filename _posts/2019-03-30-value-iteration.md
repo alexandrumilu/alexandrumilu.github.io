@@ -125,7 +125,7 @@ Therefore, according to Banach's fixed point theorem, by starting with a random 
 
 Now we will prove that $$T^*$$ is a contraction under the same norm and thus prove the validity of the value iteration algorithm. To prove that $$T^*$$ is a contraction under the infinity norm we follow the same strategy as above. 
 
-$$\|T^* V-T^* U\|_{\infty} = \max_{s\in S}(\max_{a\in A} (r(s,a)+\gamma \sum_{s'} p(s'\vert s,a)V(s'))-\max_{a\in A} (r(s,a)+\gamma \sum_{s'} p(s'\vert s,a)U(s'))$$
+$$\|T^* V-T^* U\|_{\infty} = \max_{s\in S}(\max_{a\in A} (r(s,a)+\gamma \sum_{s'} p(s'\vert s,a)V(s'))-\max_{a\in A} (r(s,a)+\gamma \sum_{s'} p(s'\vert s,a)U(s')))$$
 
 However, the difference of two maximums is less than the maximum of the difference, thus
 
