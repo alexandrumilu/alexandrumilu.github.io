@@ -12,7 +12,7 @@ In reinforcement learning we are modeling the problem using a Markov Decision Pr
 
 In this post we will consider only stationary deterministic policies $\pi:S\rightarrow A,$ which take in a state and choose an action according to some learned rule. For the math to work out easier we will also add a discount factor $\gamma$ to our model that discounts any reward obtained in the future (a reward $r$ obtained $t$ steps into the future will have value $\gamma^t r$. One can think about this discount factor as $1$ minus probability of dying at each time step. We will also consider MDPs that have an infinite number of steps. One can take an MDP that has a finite number of states and add a terminal state with reward $0$ to it. We will also consider only MDP's where $S$ and $A$ are finite sets, in order to simplify the exposition. The results can be proved if $S$ and $A$ are infinite too. 
 
-We will define a function $f:\mathbb{R}^n \rightarrow \mathbb{R}^n$ to be a contraction under norm $\|\cdot \|$ if there exists $L \in (0,1)$ such that
+We will define a function $$f:\mathbb{R}^n \rightarrow \mathbb{R}^n$$ to be a contraction under norm $$\|\cdot \|$$ if there exists $L \in (0,1)$ such that
 
 $$  \| f(x) - f(y)\|\leq L\| x - y\|,\forall x,y \in \mathbb{R}^n.$$
 
