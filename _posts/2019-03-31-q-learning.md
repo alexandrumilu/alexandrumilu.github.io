@@ -1,3 +1,9 @@
+---
+layout: post
+title: Deep Q-Learning
+mathjax: true
+---
+
 In this post I will introduce the Q-Learning algorithm and its extension to large state spaces - Deep Q-Learning (DQN).
 
 The structure of this post will be as follows. First I will introduce Q-values, then introduce the Q-learning algorithm, argue it converges for small state spaces, then present how researchers extended it to large state spaces, giving us DQN. 
