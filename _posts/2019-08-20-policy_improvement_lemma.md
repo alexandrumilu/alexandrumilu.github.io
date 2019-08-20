@@ -13,11 +13,11 @@ $$V^\pi(s) = \mathbb{E}(\sum_{t=0}^\infty \gamma^tr(s_t,a_t)\vert \pi,s_0 = s).$
 
 The Q-value function of a policy is defined similarly as:
 
-$$Q^\pi(s,a) = r(s,a)+\gamma\mathbb{E}_{s'\sim P(\cdot\vert|s,a)} V^\pi(s').$$
+$$Q^\pi(s,a) = r(s,a)+\gamma\mathbb{E}_{s'\sim P(\cdot\vert s,a)} V^\pi(s').$$
 
 and the advantage function is 
 
-$$A^pi(s,a) = Q^\pi(s,a) - V^\pi(s).$$
+$$A^\pi(s,a) = Q^\pi(s,a) - V^\pi(s).$$
 
 **Policy Improvement Lemma**
 
